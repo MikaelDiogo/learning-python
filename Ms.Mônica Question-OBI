@@ -1,0 +1,14 @@
+
+dmonica = int(input('idade da senhora'))
+idadef1 = int(input('idade do filho'))
+idadef2 = int(input('idade do outro filho'))
+
+filhov = dmonica - (idadef1 + idadef2)
+if filhov<idadef1 :
+    print(idadef1)
+elif filhov < idadef2 :
+    print(idadef2)
+else:
+    print(filhov)
+
+
