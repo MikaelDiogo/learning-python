@@ -1,0 +1,53 @@
+def validar_cpf(cpf):
+    
+    cpf = cpf.replace(".", "").replace("-", "")
+
+    
+    if len(cpf) != 11:
+        return False
+
+   
+    if cpf == cpf[0] * 11:
+        return False
+
+    
+    digitos = list(map(int, cpf))
+
+    
+    soma = 0
+    for i in range(10, 1, -1):
+        soma += digitos[10 - i] * i
+    resto = soma % 11
+    if resto < 2:
+        digito_verificador1 = 0
+    else:
+        digito_verificador1 = 11 - resto
+
+    
+    if digitos[9] != digito_verificador1:
+        return False
+
+    
+    soma = 0
+    for i in range(11, 1, -1):
+        soma += digitos[11 - i] * i
+    resto = soma % 11
+    if resto < 2:
+        digito_verificador2 = 0
+    else:
+        digito_verificador2 = 11 - resto
+
+    
+    if digitos[10] != digito_verificador2:
+        return False
+
+    
+    return True
+
+
+cpf = input("Digite o CPF: ")
+
+if validar_cpf(cpf):
+    print("CPF válido")
+else:
+    print("CPF inválido")
