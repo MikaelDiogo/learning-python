@@ -1,3 +1,8 @@
+The exercise was solved during the Brazilian Computer Olympiad (OBI), this is a very simple problem in which the person had a certain amount to pay 3 bills, but if the money was not enough, he would need to see how many bills he can pay (For the resolution of the exercise, only conditionals were used)
+
+
+
+
 V = int(input())
 A = int(input())
 F = int(input())
@@ -23,3 +28,5 @@ elif vtotal > V:
         print(1)
     else:
         print(0)
+
+
